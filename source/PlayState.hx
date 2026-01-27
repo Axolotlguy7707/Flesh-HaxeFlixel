@@ -21,15 +21,14 @@ class PlayState extends FlxState
 
 
 		map = new FlxOgmo3Loader(AssetPaths.Flesh__ogmo, AssetPaths.testlevel__json);
-		walls = map.loadTilemap(AssetPaths.tree__png, "walls");
+		walls = map.loadTilemap(AssetPaths.tree__png, "Walls");
 		//walls.follow();
-		walls.setTileProperties(1, NONE);
-		walls.setTileProperties(2, ANY);
+		walls.setTileProperties(0, NONE);
 		add(walls);
-		FlxG.camera.bgColor = 0xFF00FF00;
+		//FlxG.camera.bgColor = 0xFF00FF00;
 
 		player = new Player(0, 0);
-		map.loadEntities(placeEntities, "entities");
+		map.loadEntities(placeEntities, "Entities");
 
 		add(player);
 	}
